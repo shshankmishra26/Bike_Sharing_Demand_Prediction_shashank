@@ -1,123 +1,67 @@
 # Bike_Sharing_Demand_Prediction_shashank
-## Overview
+<h1 align="center"> Bike-sharing-demand-prediction </h1>
+<h3 align="center"> AlmaBetter Verfied Project - <a href="https://www.almabetter.com/"> AlmaBetter School </a> </h5>
 
-This project aims to develop a predictive model to forecast the bike rental count based on various features such as date, weather conditions, and time of the day. The project utilizes hour datasets." The "day" dataset contains daily aggregated bike rental information, while the "hour" dataset provides hourly details. Dataset Description Day Dataset
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## Folder structure
-├───artifacts
-├───documents
-│   └───Project Report
-├───logs
-├───notebook
-│   └───data
-├───src
-│   ├───components
-│   ├───pipeline
-├───static
-├───templates
-notebook/: Jupyter notebooks for data exploration, preprocessing, and model development.
-notebook/data/: contains the dataset file(s).
-src/: Source code for the project, including preprocessing functions and model training .
-src/pipeline/:Source code for different implemented pipelines.
-artifacts/: Directory to store model and evaluation results and perform predictions.
-static/ and templates/ contains basic frontend framework for deployment using flask.
-The "day" dataset consists of the following columns:
-- instant: A unique identifier for each record
-- dteday: Date of the record
-- season: Season of the year (1 = spring, 2 = summer, 3 = fall, 4 = winter)
-- yr: Year (0 = 2011, 1 = 2012)
-- mnth: Month (1 to 12)
-- holiday: Binary flag indicating if it is a holiday (1 = yes, 0 = no)
-- weekday: Day of the week (0 to 6, where 0 = Sunday)
-- workingday: Binary flag indicating if it is a working day (1 = yes, 0 = no)
-- weathersit: Weather situation (1 = clear, 2 = mist/cloudy, 3 = light rain/snow, 4 = heavy rain/snow)
-- temp: Normalized temperature in Celsius
-- atemp: Normalized feeling temperature in Celsius
-- hum: Normalized humidity
-- windspeed: Normalized wind speed
-- casual: Count of casual bike rentals
-- registered: Count of registered bike rentals
-- cnt: Total count of bike rentals (casual + registered)
-Hour Dataset
-The "hour" dataset contains the following columns:
+![Screenshot (219)](https://user-images.githubusercontent.com/85070726/161031482-d62503d2-3243-4a9c-9b8c-516f383a947d.png)
 
-- instant: A unique identifier for each record
-- dteday: Date of the record
-- season: Season of the year (1 = spring, 2 = summer, 3 = fall, 4 = winter)
-- yr: Year (0 = 2011, 1 = 2012)
-- mnth: Month (1 to 12)
-- hr: Hour of the day (0 to 23)
-- holiday: Binary flag indicating if it is a holiday (1 = yes, 0 = no)
-- weekday: Day of the week (0 to 6, where 0 = Sunday)
-- workingday: Binary flag indicating if it is a working day (1 = yes, 0 = no)
-- weathersit: Weather situation (1 = clear, 2 = mist/cloudy, 3 = light rain/snow, 4 = heavy rain/snow)
-- temp: Normalized temperature in Celsius
-- atemp: Normalized feeling temperature in Celsius
-- hum: Normalized humidity
-- windspeed: Normalized wind speed
-- casual: Count of casual bike rentals
-- registered: Count of registered bike rentals
-- cnt: Total count of bike rentals (casual + registered)
-To run the project locally, please ensure you have the following dependencies installed:
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+ 
+## Objectives
+The aim of the project is to predict the bike count required at each hour for stable supply. It is important to make the rental bike available and accesible to public at right time and reduce waiting time for their mobility comfort.
 
-Python 3.7 or higher
-NumPy
-Pandas
-Scikit-learn
-Matplotlib
-Jupyter Notebook
-ipykernel
-streamlit
-Once you have the dependencies, follow these steps to set up the project:
 
-Clone the repository: git clone https://github.com/Pratik.94229/Bike-sharing-demand-prediction.git
-Navigate to the project directory: cd Bike-sharing-demand-prediction
-Create a virtual environment (optional): conda create -p venv python==3.8
-Activate the virtual environment (optional): activate venv/
-Install the required packages: pip install -r requirements.txt
-Usage
-Launch VSCODE
-Open the Model Training.ipynb notebook.
-Run the cells in the notebook to execute the code and see the results.
-Feel free to modify the code or experiment with different models and parameters.
-## Results
-The results of the bike sharing demand prediction are evaluated based on various metrics such as mean absolute error (MAE), root mean squared error (RMSE), and R-squared score. These metrics provide insights into the performance of the model and how well it predicts bike sharing demand.
+## Project Desciption
+**capstone_project.ipynb** - Include all function required to predict the bike sharing demand
 
-## Model Building and Selection
-To predict the bike rental count, several machine learning models were implemented and evaluated. The following algorithms were utilized:
+**Technical_documentation.docx** - Include the documentation for the project.
 
-Linear Regression
-Random Forest
-Extra Trees Regressor
-LightGBM
-XGBoost
-After training and evaluating these models, XGBoost was chosen as the final model due to its superior performance in terms of accuracy and predictive power. Model Deployment
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+ 
+## Linear Regression
+linear regression model assumes that the relationship between the dependent variable and independent is linear. This relationship is modeled through a disturbance term or error variable ε — an unobserved random variable that adds "noise" to the linear relationship between the dependent variable. Thus the model takes the form
+Regression is done on numerical data which is continuous.
+Linear regression consist of dependent and independent variables related linear to each other
+our basic aim is to create best fit line from the dependent and independent variable between two axis, it is expressed in straight line
 
-The selected XGBoost model was deployed using Streamlit, a Python library for building interactive web applications. The deployment allows users to input the relevant features such as date, weather conditions, and time, and obtain the predicted bike rental count as the output.
+![Screenshot (227)](https://user-images.githubusercontent.com/85070726/161062232-c2a2a1cc-3dd6-4aac-988f-f0ff85c588ad.png)
 
-Deployment Link- https://pratik94229-bike-sharing-demand-p-srccomponentsstreamlit-4ksiv8.streamlit.app/
 
-To use the deployed model using flask, follow these steps:
+**Y=B0+B1X1+B2X2+……..+e**
 
-1) Install the required dependencies by running pip install -r requirements.txt(make sure to remove commented e .).
-2) First train the model using command python src/pipeline/training_pipeline.py which creates model. 
-3) Then run the Flask application using the command python app.py
-4) Access the application in your web browser at the provided URL.
-5) Enter the required input features such as date, weather conditions, and time etc.
-6) Click the "Predict" button to obtain the predicted bike rental count.
-To use the deployed model using streamlit, follow these steps:
+**B0** is intercept 
+**b1, b2...** are the parameters
+**Y** is actual value
+**x1,x2** are independent variables 
+**e** is noise
 
-1) Install the required dependencies by running pip install -r requirements.txt(make sure to remove commented e .).
-2) First train the model using command python src/pipeline/training_pipeline.py which creates model. 
-3) Then run the Streamlit application using the command streamlit run src/components/streamlit.py.
-4) Access the application in your web browser at the provided URL.
-5) Enter the required input features such as date, weather conditions, and time etc.
-6) Click the "Predict" button to obtain the predicted bike rental count.
-Please note that the accuracy of the predictions may vary based on the input data and model performance.
+Best fit line in which error between predicted and actual value is minimum. Residual error = (predicted-actual value)2
 
-## Conclusion
-This project demonstrates the application of machine learning models in predicting bike rental counts. By leveraging the power of LightGBM and utilizing various input features, the model achieves accurate predictions, allowing users to make informed decisions related to bike rental management.
+Our goal is to locate optimum model complexity, if complexity of model exceeded then overfiting of model occur while complexity falls the underfiting will occur in that case we use regularization L1 and L2 it is used to regularize the size of co efficient.
 
-The Streamlit deployment provides a convenient and interactive way to access the model's predictions, making it user-friendly and accessible to a wide range of users.
+### Lasso regression (L1 Regularization)
+It is a type of linear regression that used for shrinkage and to avoid overfitting in the data. To make the optimal solution we use penalty term in cost function and minimize the cost function from value is lambda * mag(Bij) and make final value become zero.
 
-For further details, code implementation, and analysis, please refer to the code repository.
+### Ridge Regression (L2 Regularization)
+This method performs L2 regularization. When the issue of least-squares are unbiased, and variances are large, this results in predicted values being far away from the actual values. to make the optimal solution we use penalty term in cost function and minimize the cost function from the value is lambda * (Bij)2 and make final value close to zero and shrink the value.
+ 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<!-- CREDITS -->
+<h2 id="credits"> :scroll: Credits</h2>
+
+ Shubhangi Dharmik  | Avid Learner | Data Scientist | Machine Learning Engineer | Deep Learning enthusiast
+ 
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](linkedin.com/in/shubhangi-dharmik-49083a122)
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shubhangidharmik)
+[![Medium Badge](https://img.shields.io/badge/Medium-1DA1F2?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@shubhangidharmik95)
+
+ 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+ 
+## References - 
+
+https://machinelearningmastery.com/linear-regression-for-machine-learning/
+
+https://towardsdatascience.com/linear-regression-detailed-view-ea73175f6e86
