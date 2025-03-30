@@ -8,57 +8,51 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
  
-## Objectives
-The aim of the project is to predict the bike count required at each hour for stable supply. It is important to make the rental bike available and accesible to public at right time and reduce waiting time for their mobility comfort.
-
-
-## Project Desciption
-**capstone_project.ipynb** - Include all function required to predict the bike sharing demand
-
-**Technical_documentation.docx** - Include the documentation for the project.
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
- 
-# 🚲 Bike Sharing Demand Prediction
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![ML](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-This project is part of a **Capstone Project** by **Shashank Mishra**, aiming to predict bike-sharing demand using historical data and multiple machine learning models.
 
 ---
 
-## 📊 **Project Overview**
+## 🗃️ Dataset Description
 
-The goal of this project is to accurately predict the number of bikes rented at a given time using various features such as:
-- **Datetime information**: Season, month, hour, and day.
-- **Weather conditions**: Temperature, humidity, and windspeed.
-- **Special events**: Holidays and working days.
+### 📅 Day Dataset Columns
+- `instant`: Unique identifier for each record  
+- `dteday`: Date of the record  
+- `season`: Season of the year (1 = spring, 2 = summer, 3 = fall, 4 = winter)  
+- `yr`: Year (0 = 2011, 1 = 2012)  
+- `mnth`: Month (1 to 12)  
+- `holiday`: Binary flag (1 = holiday, 0 = no holiday)  
+- `weekday`: Day of the week (0 = Sunday)  
+- `workingday`: Binary flag (1 = working day, 0 = non-working day)  
+- `weathersit`: Weather condition (1 = clear, 2 = mist, 3 = light rain/snow, 4 = heavy rain/snow)  
+- `temp`: Normalized temperature  
+- `atemp`: Normalized feeling temperature  
+- `hum`: Normalized humidity  
+- `windspeed`: Normalized wind speed  
+- `casual`: Count of casual bike rentals  
+- `registered`: Count of registered bike rentals  
+- `cnt`: Total bike rentals (casual + registered)  
 
-✅ The project uses machine learning models to identify demand patterns, helping bike rental companies optimize fleet management and resource allocation.
+### ⏰ Hour Dataset Columns
+- Same columns as the **Day Dataset** with the addition of:  
+  - `hr`: Hour of the day (0 to 23)  
 
 ---
 
-## ⚙️ **Technologies Used**
-- 🐍 **Python 3.8+**
-- 📊 **Jupyter Notebook**
-- 📈 **Pandas, NumPy, Matplotlib, Seaborn**
-- 🔥 **Scikit-Learn (ML Models)**
-- 📚 **SHAP for model explainability**
+## 🛠️ Dependencies
+Ensure you have the following dependencies installed:
+- Python 3.7 or higher  
+- NumPy  
+- Pandas  
+- Scikit-learn  
+- Matplotlib  
+- Jupyter Notebook  
+- ipykernel  
+- Streamlit  
 
 ---
 
-## 🚀 **Installation & Usage**
+## ⚙️ Installation and Setup
 
-### 📦 **1. Clone the Repository**
+### 🛑 Clone the Repository
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd Bike_Sharing_Demand_Prediction
-
-
-
-## References - 
-
-https://machinelearningmastery.com/linear-regression-for-machine-learning/
-
-https://towardsdatascience.com/linear-regression-detailed-view-ea73175f6e86
+git clone https://github.com/Pratik.94229/Bike-sharing-demand-prediction.git
+cd Bike-sharing-demand-prediction
